@@ -122,11 +122,3 @@ print('\nPostgreSQL connection is closed')
 
 # Truncate table deletes all data from a table without scanning it.
 
-##CREATE TABLE la_weather_utc
-##AS 
-##SELECT lat,long,to_timestamp(time) AT TIME ZONE 'UTC' as utc_time, time, 
-##timezone,timezone_offset, temp, pressure, humidity, wind_speed, wind_deg, description
-##FROM ca_weather;
-
-
-

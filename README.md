@@ -1,6 +1,6 @@
 # OpenWeatherETL
 
-The script is currently set to extract historical weather data for Los Angeles, California.
+The script is currently set to extract historical weather data for Los Angeles, California, using lat long coordinates.
 
 Run create_table.py and create_temp_table files first to load up the table and staging table in postgres server.
 

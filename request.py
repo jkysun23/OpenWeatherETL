@@ -20,13 +20,13 @@ start_time = int(time.time()) - 432000
 # this returns unix timestamp from 5 days in the past.
 
 
-print(start_time)
-print(datetime.utcfromtimestamp(start_time).strftime('%Y-%m-%d %H:%M:%S'))
+# print(start_time)
+print("Request datetime: ", datetime.utcfromtimestamp(start_time).strftime('%Y-%m-%d %H:%M:%S'),"\n")
 
 lat = 34.052231
 lon = -118.243683
 
-payload = {'lat':lat,'lon':lon,'dt':start_time,'appid':API_key}
+payload = {'lat':lat,'lon':lon,'dt':start_time,'appid':API_key, 'units':'imperial'}
 
 site = 'https://api.openweathermap.org/data/2.5/onecall/timemachine'
 
@@ -35,8 +35,8 @@ def getresponse(url):
     try:
         response = requests.get(url, params = payload)
         response.raise_for_status()
-        print(response.url)
-        print(response.ok)
+##        print(response.url)
+        print("Status code:", response.ok)
         return response
     except requests.exceptions.RequestException as e:
         print('Error\n')
@@ -95,8 +95,9 @@ try:
                 for hr in range(0, len(data['hourly'])):
                     insert_data(cur,data,hr)
             ##    print(json.dumps(data['hourly'],indent=4))
+                print("Inserted weather data for UTC date:",datetime.utcfromtimestamp(payload['dt']).strftime('%Y-%m-%d %H:%M:%S'))
                 payload['dt'] = payload['dt'] + 86400
-                print('\n\n\n')
+                print('\n')
             print('\nData inserted to staging table successfully.')
             temp_to_final(cur)
             print('\nData moved from staging table to production table.')
@@ -121,4 +122,5 @@ print('\nPostgreSQL connection is closed')
 
 
 # Truncate table deletes all data from a table without scanning it.
+
 

@@ -18,6 +18,7 @@ try:
         with conn.cursor() as cur:
             cur.execute('''
                     CREATE TABLE socal_weather(
+                    unique_id SERIAL PRIMARY KEY,
                     lat FLOAT,
                     long FLOAT,
                     timezone VARCHAR(50),

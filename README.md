@@ -9,7 +9,7 @@ Link to the Tableau dashboard:
 
 city.list.json.gz - http://bulk.openweathermap.org/sample/
 
-OpenWeather - https://openweathermap.org/api/one-call-api#history
+OpenWeather API Server - https://openweathermap.org/api/one-call-api#history
 
 Top 10 most populous US cities in 2020 - https://en.wikipedia.org/wiki/List_of_United_States_cities_by_population
 

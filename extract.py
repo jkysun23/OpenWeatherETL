@@ -19,7 +19,6 @@ hostname = cred['host']
 # city ids of the 10 most populous cities in the US.  I'm using 10 for proof of concept and to not overwhelm the api server.
 ids = [4560349,4684888,4699066,4726206,4887398,5128581,5308655,5368361,5391811,5392171]
 
-print('Converting city_list to pandas dataframe\nPlease wait, this may take a few seconds.\n')
 
 with open('city_list.json', encoding = 'UTF-8') as city_file:
     city_data = json.load(city_file)
@@ -28,9 +27,6 @@ with open('city_list.json', encoding = 'UTF-8') as city_file:
 df = pd.json_normalize(city_data)
 df.rename(columns = {'coord.lon':'long', 'coord.lat':'lat'}, inplace = True)
 df.set_index('id', inplace=True)
-
-
-print('\ncity_list imported into pandas dataframe.\n')
 
 
 def getresponse(url):
@@ -150,14 +146,22 @@ cur = conn.cursor()
 engine = create_engine('postgresql://'+ str(db_user) +':'+ str(db_pass)+'@' + str(hostname) + '/'+ str(db_name))
 engine_conn = engine.connect()
 
+result = engine_conn.execute("SELECT 1 FROM city_list")
+exists = result.fetchone()
+if not exists:
+    with open('city_list.json', encoding = 'UTF-8') as city_file:
+        city_data = json.load(city_file)
+        print('Converting city_list.json to pandas dataframe...\n')
+        df = pd.json_normalize(city_data)
+        df.rename(columns = {'coord.lon':'long', 'coord.lat':'lat'}, inplace = True)
+        df.set_index('id', inplace=True)
 
-try:
     print('Importing city_list to postgres table: city_list...\n')
     df.to_sql('city_list', con=engine_conn)
     print('city_list table created\n')
-except:  ## this was implemented to save time from having to replace the city list table every run.
+else:
     print('city_list already exists.\n')
-    pass
+
 
 create_table(cur)
 

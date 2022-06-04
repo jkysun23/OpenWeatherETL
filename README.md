@@ -44,5 +44,6 @@ The transformation and loading process:
 ### Dashboard - Tableau
 
 The output from the production table was copy and pasted into the excel file, production_table_output.xlsx, which was then used to create the dashboard:
+
 https://public.tableau.com/views/OpenWeather/Sheet1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
 

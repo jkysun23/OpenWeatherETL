@@ -12,10 +12,9 @@ city.list.json.gz - http://bulk.openweathermap.org/sample/
 OpenWeather - https://openweathermap.org/api/one-call-api#history
 
 Top 10 most populous US cities in 2020 - https://en.wikipedia.org/wiki/List_of_United_States_cities_by_population
-
 (Please note that Wikipedia has updated it's ranking to base off of 2021 data, the data used for the dashboard at the time was from 2020 Wikipedia ranking.)
 
-# Extraction - Python
+### Extraction - Python
 
 Prior to the start of the extraction process, you must type in your postgres database credentials into the credentials.txt file.
 
@@ -27,9 +26,9 @@ The extraction process:
 
 2. extract.py then converts the city_list.json file into a pandas dataframe before finally converting the dataframe into a postgres table.
 
-3. Finally, extract.py extracts weather data from OpenWeather API server and insert them into the postgres source table.
+3. Finally, extract.py extracts weather data from OpenWeather API server and loads them into the postgres source table.
 
-# Transformation - Postgres
+### Transformation - Postgres
 
 data clean is postgres query script that will join the weather data with the city data, remove duplicates, adjust date and time formats, and insert cleaned weather data into production table without any overlapping.
 

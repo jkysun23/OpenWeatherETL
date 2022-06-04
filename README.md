@@ -1,15 +1,32 @@
-## OpenWeatherETL
+## OpenWeather ETL Project
 
-extract.py will automatically extract the weather data for the ten most populous US cities in 2020 from OpenWeather API server and load them into a postgres table.
+This project is a proof of concept for the Extraction, Transformation, and Loading (ETL) process of weather data from the OpenWeather API server to a Postgres database.  A Tableau dashboard was also created using the populated weather data from the postgres database.
 
-
-The ten most populous US cities in 2020 are taken from https://en.wikipedia.org/wiki/List_of_United_States_cities_by_population.  Please note that Wikipedia is now ranking the populous cities for 2021, not 2020.
-
-
-extract.py will automatically create a database and source table to store the weather data.  User can specify the database name and credentials using the credentials.txt file.
+Link to the Tableau dashboard:
 
 
-extract.py will also convert city_list json file to a pandas dataframe and then finally, a postgres table.
+# Data used
+
+city.list.json.gz - http://bulk.openweathermap.org/sample/
+OpenWeather - https://openweathermap.org/api/one-call-api#history
+Top 10 most populous US cities in 2020 - https://en.wikipedia.org/wiki/List_of_United_States_cities_by_population
+(Please note that Wikipedia has updated it's ranking to base off of 2021 data, the data used for the dashboard at the time was from 2020 Wikipedia ranking.)
+
+# Extraction - Python
+
+Prior to the start of the extraction process, you must type in your postgres database credentials into the credentials.txt file.
+
+The extraction process is automated by running the extract.py file.  
+
+The extraction process:
+
+1. extract.py creates a database and a source table to store the weather data.  The database credentials will be based on the user specifications set in the credentials.txt file.
+
+2. extract.py then converts the city_list.json file into a pandas dataframe before finally converting the dataframe into a postgres table.
+
+3. Finally, extract.py extracts weather data from OpenWeather API server and insert them into the postgres source table.
+
+# Transformation - Postgres
 
 data clean is postgres query script that will join the weather data with the city data, remove duplicates, adjust date and time formats, and insert cleaned weather data into production table without any overlapping.
 

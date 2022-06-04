@@ -8,8 +8,11 @@ Link to the Tableau dashboard:
 ### Data used
 
 city.list.json.gz - http://bulk.openweathermap.org/sample/
+
 OpenWeather - https://openweathermap.org/api/one-call-api#history
+
 Top 10 most populous US cities in 2020 - https://en.wikipedia.org/wiki/List_of_United_States_cities_by_population
+
 (Please note that Wikipedia has updated it's ranking to base off of 2021 data, the data used for the dashboard at the time was from 2020 Wikipedia ranking.)
 
 # Extraction - Python

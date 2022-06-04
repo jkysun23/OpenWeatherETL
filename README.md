@@ -1,4 +1,4 @@
-# OpenWeatherETL
+## OpenWeatherETL
 
 extract.py will automatically extract the weather data for the ten most populous US cities in 2020 from OpenWeather API server and load them into a postgres table.
 

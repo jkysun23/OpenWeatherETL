@@ -1,11 +1,11 @@
-## OpenWeather ETL Project
+# OpenWeather ETL Project
 
 This project is a proof of concept for the Extraction, Transformation, and Loading (ETL) process of weather data from the OpenWeather API server to a Postgres database.  A Tableau dashboard was also created using the populated weather data from the postgres database.
 
 Link to the Tableau dashboard:
 
 
-# Data used
+### Data used
 
 city.list.json.gz - http://bulk.openweathermap.org/sample/
 OpenWeather - https://openweathermap.org/api/one-call-api#history

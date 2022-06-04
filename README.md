@@ -1,6 +1,7 @@
 # OpenWeather ETL Project
 
-This project is a proof of concept for the  (Extraction, Transformation, and Loading) process of weather data from the OpenWeather API server to a Postgres database.  A Tableau dashboard was also created using the populated weather data from the postgres database.
+This project is a proof of concept for the  (Extraction, Transformation, and Loading) process of weather data from the OpenWeather API server to a Postgres database.  OpenWeather API is able to provide us with hourly weather data, of a particular city, up to 5 days into the past from the hour that the API call was made.  To minimize the risk of exceeding the daily call limit during testing phases, I have limited my selection of cities down to just the top 10 most populous U.S. cities in 2020.
+A Tableau dashboard was also created using the populated weather data from the postgres database.
 
 Link to the Tableau dashboard:
 

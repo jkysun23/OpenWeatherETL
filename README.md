@@ -6,8 +6,9 @@ OpenWeather API is able to provide us with hourly weather data, of a particular 
 
 To minimize the risk of exceeding the daily call limit during testing phases, I have limited my selection of cities down to just the top 10 most populous U.S. cities in 2020.
 
-A Tableau dashboard was also created using the populated weather data from the postgres database:
+A Tableau dashboard was also created using the output (5/29/2022 - 6/4/2022) from the production table:
 
+https://public.tableau.com/views/OpenWeather/WeatherInfoMap?:language=en-US&:display_count=n&:origin=viz_share_link
 
 
 
@@ -51,5 +52,4 @@ The transformation and loading process:
 
 The output from the production table was copy and pasted into the excel file, production_table_output.xlsx, which was then used to create the dashboard:
 
-https://public.tableau.com/views/OpenWeather/Sheet1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
-
+https://public.tableau.com/views/OpenWeather/WeatherInfoMap?:language=en-US&:display_count=n&:origin=viz_share_link

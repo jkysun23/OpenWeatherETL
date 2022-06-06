@@ -5,6 +5,10 @@ OpenWeather API is able to provide us with hourly weather data, of a particular 
 
 To minimize the risk of exceeding the daily call limit during testing phases, I have limited my selection of cities down to just the top 10 most populous U.S. cities in 2020.
 
+Top 10 most populous US cities in 2020 - https://en.wikipedia.org/wiki/List_of_United_States_cities_by_population
+
+(Please note that Wikipedia has updated its ranking using 2021 data.  The data used for this dashboard was from the 2020 Wikipedia ranking.)
+
 A Tableau dashboard was also created using the output (5/29/2022 - 6/4/2022) from the production table:
 
 https://public.tableau.com/views/OpenWeather/WeatherInfoMap?:language=en-US&:display_count=n&:origin=viz_share_link
@@ -16,10 +20,6 @@ https://public.tableau.com/views/OpenWeather/WeatherInfoMap?:language=en-US&:dis
 city.list.json.gz - http://bulk.openweathermap.org/sample/
 
 OpenWeather API Server - https://openweathermap.org/api/one-call-api#history
-
-Top 10 most populous US cities in 2020 - https://en.wikipedia.org/wiki/List_of_United_States_cities_by_population
-
-(Please note that Wikipedia has updated its ranking using 2021 data.  The data used for this dashboard was from the 2020 Wikipedia ranking.)
 
 ### Extraction - Python (json, pandas, psycopg2, requests, sqlalchemy)
 

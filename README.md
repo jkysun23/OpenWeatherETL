@@ -21,7 +21,7 @@ Top 10 most populous US cities in 2020 - https://en.wikipedia.org/wiki/List_of_U
 
 (Please note that Wikipedia has updated its ranking using 2021 data.  The data used for this dashboard was from the 2020 Wikipedia ranking.)
 
-### Extraction - Python
+### Extraction - Python (json, pandas, psycopg2, requests, sqlalchemy)
 
 Prior to the start of the extraction process, you must type in your postgres database credentials into the credentials.txt file.
 

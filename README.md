@@ -1,6 +1,5 @@
 # OpenWeather ETL Project
 
-This project is a proof of concept for the  (Extraction, Transformation, and Loading) process of weather data from the OpenWeather API server to a Postgres database. 
 
 OpenWeather API is able to provide us with hourly weather data, of a particular city, up to 5 days into the past from the hour that the API call was made.
 
